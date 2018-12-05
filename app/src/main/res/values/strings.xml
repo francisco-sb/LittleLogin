@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Little Login</string>
+
+    <!-- Login Activity -->
+    <string name="label_user">User</string>
+    <string name="label_password">Password</string>
+    <string name="action_login">Sign In</string>
+    <string name="label_description">A simple login sample</string>
+</resources>
