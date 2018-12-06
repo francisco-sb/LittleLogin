@@ -4,51 +4,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    android:paddingStart="@dimen/padding_default"
-    android:paddingLeft="@dimen/padding_default"
-    android:paddingTop="@dimen/padding_default"
+    android:paddingBottom="@dimen/padding_default"
     android:paddingEnd="@dimen/padding_default"
+    android:paddingLeft="@dimen/padding_default"
     android:paddingRight="@dimen/padding_default"
-    android:paddingBottom="@dimen/padding_default">
+    android:paddingStart="@dimen/padding_default"
+    android:paddingTop="@dimen/padding_default">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/image_view"
         android:layout_width="@dimen/logo_size"
         android:layout_height="@dimen/logo_size"
-        android:layout_marginStart="@dimen/margin_default"
-        android:layout_marginLeft="@dimen/margin_default"
         android:layout_marginEnd="@dimen/margin_default"
+        android:layout_marginLeft="@dimen/margin_default"
         android:layout_marginRight="@dimen/margin_default"
-        app:layout_constraintBottom_toTopOf="@id/materialCard"
+        android:layout_marginStart="@dimen/margin_default"
+        app:layout_constraintBottom_toTopOf="@id/material_card"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_account_circle_white" />
 
     <android.support.design.card.MaterialCardView
-        android:id="@+id/materialCard"
+        android:id="@+id/material_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_default"
-        android:layout_marginLeft="@dimen/margin_default"
         android:layout_marginEnd="@dimen/margin_default"
+        android:layout_marginLeft="@dimen/margin_default"
         android:layout_marginRight="@dimen/margin_default"
+        android:layout_marginStart="@dimen/margin_default"
         app:cardBackgroundColor="@android:color/white"
         app:cardCornerRadius="@dimen/corner_radius_default"
         app:layout_constraintBottom_toTopOf="@id/button_login"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView">
+        app:layout_constraintTop_toBottomOf="@id/image_view">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:layout_marginStart="@dimen/padding_default"
-            android:layout_marginLeft="@dimen/padding_default"
-            android:layout_marginTop="@dimen/padding_default"
-            android:layout_marginEnd="@dimen/padding_default"
-            android:layout_marginRight="@dimen/padding_default"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/padding_default"
+            android:layout_marginEnd="@dimen/padding_default"
+            android:layout_marginLeft="@dimen/padding_default"
+            android:layout_marginRight="@dimen/padding_default"
+            android:layout_marginStart="@dimen/padding_default"
+            android:layout_marginTop="@dimen/padding_default"
             android:orientation="vertical">
 
             <LinearLayout
@@ -58,45 +58,57 @@
                 android:orientation="vertical">
 
                 <android.support.design.widget.TextInputLayout
-                    android:id="@+id/userLayout"
+                    android:id="@+id/user_layout"
                     style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/padding_top_bottom"
-                    android:layout_marginBottom="@dimen/padding_top_bottom">
+                    android:layout_marginBottom="@dimen/padding_top_bottom"
+                    android:layout_marginTop="@dimen/padding_top_bottom">
 
                     <android.support.design.widget.TextInputEditText
                         android:id="@+id/user"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/label_user" />
+                        android:hint="@string/label_user"
+                        android:inputType="text"
+                        android:singleLine="true" />
 
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
-                    android:id="@+id/passwordLayout"
+                    android:id="@+id/password_layout"
                     style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/padding_top_bottom"
                     android:layout_marginTop="@dimen/padding_top_bottom"
-                    android:layout_marginBottom="@dimen/padding_top_bottom">
+                    app:passwordToggleEnabled="true">
 
                     <android.support.design.widget.TextInputEditText
                         android:id="@+id/password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/label_password" />
+                        android:hint="@string/label_password"
+                        android:inputType="textPassword"
+                        android:singleLine="true" />
 
                 </android.support.design.widget.TextInputLayout>
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/progress_view"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/label_progress" />
 
                 <ProgressBar
                     android:layout_width="wrap_content"
@@ -115,17 +127,17 @@
         style="@style/Widget.MaterialComponents.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_default"
-        android:layout_marginLeft="@dimen/margin_default"
-        android:layout_marginEnd="@dimen/margin_default"
-        android:layout_marginRight="@dimen/margin_default"
         android:layout_marginBottom="@dimen/margin_default"
+        android:layout_marginEnd="@dimen/margin_default"
+        android:layout_marginLeft="@dimen/margin_default"
+        android:layout_marginRight="@dimen/margin_default"
+        android:layout_marginStart="@dimen/margin_default"
         android:backgroundTint="@color/colorAccent"
         android:text="@string/action_login"
         app:layout_constraintBottom_toTopOf="@+id/app_description"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/materialCard" />
+        app:layout_constraintTop_toBottomOf="@id/material_card" />
 
     <LinearLayout
         android:id="@+id/app_description"

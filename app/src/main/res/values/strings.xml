@@ -5,5 +5,9 @@
     <string name="label_user">User</string>
     <string name="label_password">Password</string>
     <string name="action_login">Sign In</string>
+    <string name="label_progress">Loading…</string>
     <string name="label_description">A simple login sample</string>
+
+    <!-- Main Activity -->
+    <string name="label_welcome_message">Welcome to MainActivity!</string>
 </resources>

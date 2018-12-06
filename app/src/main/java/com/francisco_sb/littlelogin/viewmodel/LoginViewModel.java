@@ -9,25 +9,41 @@ public class LoginViewModel extends ViewModel {
     private static final String USER = "user";
     private static final String PASSWORD = "123..";
 
-    private MutableLiveData<Object> result;
+    private String us;
+    private String pwd;
 
-    public void doLogin(String user, String password) {
-        if (user.equals("")) {
-            result.setValue("You need a user");
-            return;
+    public LiveData<String> validateCredentials(String user, String password) {
+
+        this.us = user;
+        this.pwd = password;
+
+        MutableLiveData<String> credentialsResult = new MutableLiveData<>();
+
+        if (us.equals("")) {
+            credentialsResult.setValue("You need a user");
+            return credentialsResult;
         }
 
-        if (password.equals("")) {
-            result.setValue("You need a password");
-            return;
+        if (pwd.equals("")) {
+            credentialsResult.setValue("You need a password");
+            return credentialsResult;
         }
 
-        if (USER.equals(user) && PASSWORD.equals(password)) {
-            result.setValue(true);
-        } 
+        credentialsResult.setValue("SUCCESS");
+        return credentialsResult;
     }
 
-    public MutableLiveData<Object> getResult() {
-        return this.result;
+    public LiveData<Boolean> doLogin() {
+
+        MutableLiveData<Boolean> loginResult = new MutableLiveData<>();
+
+        if (USER.equals(us) && PASSWORD.equals(pwd)) {
+            loginResult.setValue(true);
+        } else {
+            loginResult.setValue(false);
+        }
+
+        return loginResult;
     }
+
 }
